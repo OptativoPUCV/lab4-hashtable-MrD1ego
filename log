@@ -12,3 +12,9 @@ hashmap.c:53:9: error: unused variable ‘newPosition’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 dfe00e0
+Thu 25 Apr 2024 10:15:06 PM UTC: 
+ hashmap.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+ tests:  1|5
+total_score: 10/70
+d6813d1

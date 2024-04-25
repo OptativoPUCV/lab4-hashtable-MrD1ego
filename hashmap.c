@@ -47,14 +47,18 @@ void insertMap(HashMap * map, char * key, void * value) {
     newElem->value = value;
     newElem->key = key;
     map->buckets[position] = newElem;
+    map->size++;
   }
-  else
+  if(map->buckets[position]->key !=NULL)
   {
-    int newPosition = resolveCollision(map, position);
-    Pair *newElem =malloc(sizeof(Pair));
-    newElem->value = value;
-    newElem->key = key;
-    map->buckets[position] = newElem;
+    for(int i = 0 ; i < map->capacity; i++)
+      {
+        Pair *newElem =malloc(sizeof(Pair));
+        newElem->value = value;
+        newElem->key = key;
+        map->buckets[position] = newElem;
+        map->size++;
+      }
   }
 }
 
