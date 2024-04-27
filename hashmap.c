@@ -115,11 +115,35 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
+  map->current = 0;
 
+  while (map->current < map->capacity && (map->buckets[map->current] == NULL || map->buckets[map->current]->key == NULL))
+  {
+    map->current++;
+  }
+
+  if (map->current >= map->capacity)
+  {
     return NULL;
+  }
+  
+  return map->buckets[map->current];
 }
 
 Pair * nextMap(HashMap * map) {
+  
+  map->current++;
 
+  while (map->current < map->capacity && (map->buckets[map->current] == NULL || map->buckets[map->current]->key == NULL))
+  {
+    map->current++;
+  }
+
+  if (map->current >= map->capacity)
+  {
+    return NULL;
+  }
+
+  return map->buckets[map->current];
     return NULL;
 }
